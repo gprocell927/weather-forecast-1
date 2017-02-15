@@ -24,7 +24,12 @@ store.dispatch((dispatch) => {
       console.log('latitude: ', latitude);
       const longitude = position.coords.longitude
       console.log('longitude: ', longitude);
+
+      axios
+        .get(`http://api.wunderground.com/api/58583248c38e2876/conditions/q/${latitude},${longitude}.json`)
+        .then((res) => console.log(res))
     })
+
 
   //do something async
   dispatch({type: 'BAR'})
