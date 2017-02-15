@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import SunriseSunset from '../SunriseSunset/SunriseSunset'
 
 class CurrentLocalWeather extends Component {
 
+<<<<<<< HEAD:src/components/CurrentLocalWeather.js
 
 //   componentWillMount(){
 //     const fetchLocalCurrentWeather = (position) => {
@@ -11,10 +13,13 @@ class CurrentLocalWeather extends Component {
 //   }
 // }
 
+=======
+>>>>>>> iteration-1:src/components/CurrentLocalWeather/CurrentLocalWeather.js
   render(){
     return (
       <section>
         <p>Local current forecast goes here</p>
+        <SunriseSunset />
       </section>
     )
   }

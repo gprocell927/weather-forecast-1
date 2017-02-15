@@ -7,6 +7,7 @@ import logger from 'redux-logger'
 import axios from 'axios'
 import Routes from './routes'
 import thunk from 'redux-thunk'
+<<<<<<< HEAD
 
 const rootReducer = (state={}, action) => {
   return state
