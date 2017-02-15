@@ -7,11 +7,11 @@ import logger from 'redux-logger'
 import axios from 'axios'
 import Routes from './routes'
 import thunk from 'redux-thunk'
-<<<<<<< HEAD
 
 const rootReducer = (state={}, action) => {
   return state
 }
+
 const middleware = [thunk, logger()]
 
 const store = createStore(rootReducer, {}, applyMiddleware(...middleware))
