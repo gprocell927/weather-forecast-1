@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import CurrentLocalWeather from './CurrentLocalWeather'
 
 const App = () => {
   return (
-    <div>Hey!</div>
+    <CurrentLocalWeather />
   )
 }
 
-export default App;
+export default App
