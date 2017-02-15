@@ -1,13 +1,15 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router';
-import Routes from './routes';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import { browserHistory } from 'react-router'
+import logger from 'redux-logger'
+import axios from 'axios'
+import Routes from './routes'
+import thunk from 'redux-thunk'
+import rootReducer from './reducers'
 
-const middleware = [thunk];
+const middleware = [thunk]
 
 const store = createStore(rootReducer, {}, applyMiddleware(...middleware))
 
