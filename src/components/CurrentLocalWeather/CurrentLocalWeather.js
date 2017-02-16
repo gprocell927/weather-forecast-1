@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
-import SunriseSunset from '../SunriseSunset/SunriseSunset'
+import SunriseSunset from '../../containers/SunriseSunset'
+
 
 class CurrentLocalWeather extends Component {
 
-//   componentWillMount(){
-//     const fetchLocalCurrentWeather = (position) => {
-//       let latitude = position.coords.latitude
-//       let longitude = position.coords.longitude
-//       console.log(latitude, longitude)
-//   }
-// }
-
   render(){
+    const { weatherInfo } = this.props
     return (
-      <section>
-        <p>Local current forecast goes here</p>
+      <div>
+        <div className="currentLocalTemp">
+          {weatherInfo.currentTemp}
+        </div>
+        <div className="currentCondition">
+          {weatherInfo.currentWeather}
+        </div>
         <SunriseSunset />
-      </section>
+      </div>
     )
   }
 }
