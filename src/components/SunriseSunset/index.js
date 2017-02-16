@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import './index.css'
 
 class SunriseSunset extends Component {
 
   render(){
-    console.log(this.props)
     const { times } = this.props
     return(
-        <div>
-          {times.sunrise}, {times.sunset}
+        <div className="sunrise-sunset">
+          <div className="sunrise"> {times.sunrise} </div>
+          <div className="sunset"> {times.sunset} </div>
         </div>
     )
   }
