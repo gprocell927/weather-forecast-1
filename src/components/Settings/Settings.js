@@ -18,7 +18,7 @@ class Settings extends Component{
           <h3>Settings Page</h3>
           <input
             value={this.state.text}
-            placeholder="Zip Code"
+            placeholder="Enter Zip Code"
             onChange={ (e) => this.setState({ text: e.target.value} )}
           />
           <button

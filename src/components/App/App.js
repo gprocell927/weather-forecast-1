@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CurrentLocalWeather from '../../containers/CurrentLocalWeatherContainer'
+import Settings from '../../containers/Settings'
 
 class App extends Component {
   render() {
@@ -10,9 +11,19 @@ class App extends Component {
     // if the current hour is >= 12 or < sunset, display afternoon
     // if the current hour is >= sunset or < sunset + 3 , display evening.
     // if the current hour is >= sunset + 3 or < sunrise, display night
-    console.log(this.props);
+    let markup
+    if (this.props.path === '/settings'){
+      markup = (
+        <Settings />
+      )
+    } else {
+      markup = ''
+    }
     return (
-      <CurrentLocalWeather />
+      <div>
+        {markup}
+        <CurrentLocalWeather />
+      </div>
     )
   }
 }
