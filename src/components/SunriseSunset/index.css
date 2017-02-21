@@ -1,0 +1,13 @@
+.sunrise{
+    height:45px;
+    width:90px;
+    border-radius: 90px 90px 0 0;
+    background:yellow;
+}
+
+.sunset{
+    height:45px;
+    width:90px;
+    border-radius: 0 0 90px 90px;
+    background:orange;
+}

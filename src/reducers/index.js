@@ -1,8 +1,10 @@
-const exampleReducer = (state = {}, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux'
+import times from './timesReducer'
+import weatherInfo from './currentLocalWeatherReducer'
 
-export default exampleReducer;
+const rootReducer = combineReducers({
+  times,
+  weatherInfo
+})
+
+export default rootReducer
