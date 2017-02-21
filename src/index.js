@@ -28,7 +28,7 @@ store.dispatch((dispatch) => {
 
 
       axios
-        // .get(`http://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&date=today`)
+        .get(`http://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&date=today`)
         .then((res) => res.data.results)
         .then((res) => ({
           sunrise: res.sunrise,

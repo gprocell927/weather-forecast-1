@@ -5,15 +5,27 @@ import SunriseSunset from '../../containers/SunriseSunset'
 class CurrentLocalWeather extends Component {
 
   render(){
-    const { weatherInfo } = this.props
+    let markup
+    // const { weatherInfo } = this.props
+    if (this.props.weatherInfo) {
+      markup = (
+        <div>
+          <div className="currentLocalTemp">
+            {this.props.weatherInfo.currentTemp}
+          </div>
+          <div className="currentCondition">
+            {this.props.weatherInfo.currentWeather}
+          </div>
+        </div>
+      )
+    } else {
+      markup = ''
+    }
+
+    // console.log(this.props);
     return (
       <div>
-        <div className="currentLocalTemp">
-          {weatherInfo.currentTemp}
-        </div>
-        <div className="currentCondition">
-          {weatherInfo.currentWeather}
-        </div>
+        {markup}
         <SunriseSunset />
       </div>
     )
