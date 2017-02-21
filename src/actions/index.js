@@ -22,10 +22,11 @@ export const setSunriseSunset = (times) => {
   }
 }
 
-export const pinCity = (city) => {
+export const pinCity = (city, id) => {
   return {
     type: 'PIN_CITY',
-    city
+    city,
+    id
   }
 }
 
