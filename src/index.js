@@ -15,16 +15,16 @@ store.dispatch((dispatch) => {
       const latitude = position.coords.latitude
       const longitude = position.coords.longitude
 
-      // axios
-      //   .get(`http://api.wunderground.com/api/58583248c38e2876/conditions/q/${latitude},${longitude}.json`)
-      //     .then((res) => res.data.current_observation)
-      //     .then((res) => ({
-      //       currentTemp: res.temp_f,
-      //       currentWeather: res.weather
-      //     }))
-      //     .then((weatherInfo) => dispatch({
-      //       type: 'SET_CURRENT_LOCAL_WEATHER', weatherInfo
-      //     }))
+      axios
+        .get(`http://api.wunderground.com/api/58583248c38e2876/conditions/q/${latitude},${longitude}.json`)
+          .then((res) => res.data.current_observation)
+          .then((res) => ({
+            currentTemp: res.temp_f,
+            currentWeather: res.weather
+          }))
+          .then((weatherInfo) => dispatch({
+            type: 'SET_CURRENT_LOCAL_WEATHER', weatherInfo
+          }))
 
 
       axios

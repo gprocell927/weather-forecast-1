@@ -5,5 +5,4 @@ const mapStateToProps = ({ weatherInfo }) => ({
   weatherInfo,
 })
 
-export default
-connect(mapStateToProps)(CurrentLocalWeather)
+export default connect(mapStateToProps)(CurrentLocalWeather)
