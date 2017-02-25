@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  fetch
+  return({
+    fetchPinnedCity: () =>{dispatch('APPEND_CITY')}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Settings)
