@@ -16,15 +16,26 @@ class Settings extends Component{
     // this.submitForm = this.submitForm.bind(this)
   }
 
-  submitForm(){
-    const { zipcode } = this.state;
+  submitForm(e){
+    const { zipcode } = this.state
+    const { fetchPinnedCity } = this.props
     if (zipcodeIsValid(zipcode) === true) {
-      return this.props.fetchPinnedCity(zipcode)
+      return fetchPinnedCity(zipcode)
     } //else {
     //   // show some errors (but probably just do nothing right now)
     // }
   }
   render(){
+    let citiesMarkup
+    if (this.props.pinnedCities){
+      citiesMarkup = (
+        this.props.pinnedCities
+          .map((c,i) => {
+            return <li key={i}>{c.city}</li>
+          }
+        )
+      )
+    }
     return(
 
       <div className="settings">
@@ -35,7 +46,7 @@ class Settings extends Component{
           }}>
           <h3>Settings Page</h3>
           <input
-            value={this.state.zipcode}
+            value={this.zipcode}
             placeholder="Enter Zip Code"
             onChange={ (e) => this.setState({ zipcode: e.target.value})}
           />
@@ -46,7 +57,7 @@ class Settings extends Component{
 
         <h3>Pinned Cities</h3>
         <ul>
-          {this.props.pinnedCities.map(c => <li>c.name</li>)}
+          {citiesMarkup}
         </ul>
       </div>
     )

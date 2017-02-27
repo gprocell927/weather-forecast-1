@@ -24,7 +24,6 @@ export const setSunriseSunset = (times) => {
 }
 
 export const appendCity = loc => {
-  console.log('location: ',loc)
   return {
     type: 'APPEND_CITY',
     loc
@@ -37,9 +36,9 @@ export const fetchPinnedCity = (zipcode) => {
       .get(`http://api.wunderground.com/api/58583248c38e2876/geolookup/q/${zipcode}.json`)
       .then(res => res.data.location)
       .then((loc) => dispatch({
-        type: 'APPEND_CITY', loc
-      })) ///Cannot read property 'type' of undefined
-      // you’re just console logging the result of `appendCity(loc)`, you need to somehow send that to the reducer
+        type: 'APPEND_CITY',
+        loc
+      }))
       .catch(err => console.log(err))
   }
 }

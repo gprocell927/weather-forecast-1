@@ -10,10 +10,5 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
    return bindActionCreators({ fetchPinnedCity }, dispatch)
 }
-// const mapDispatchToProps = (dispatch) => {
-//   return{
-//     fetchPinnedCity: () => dispatch(fetchPinnedCity())
-//   }
-// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Settings)
