@@ -24,6 +24,7 @@ export const setSunriseSunset = (times) => {
 }
 
 export const appendCity = loc => {
+  console.log("made it here");
   return {
     type: 'APPEND_CITY',
     loc
@@ -35,10 +36,8 @@ export const fetchPinnedCity = (zipcode) => {
     return axios
       .get(`http://api.wunderground.com/api/58583248c38e2876/geolookup/q/${zipcode}.json`)
       .then(res => res.data.location)
-      .then((loc) => dispatch({
-        type: 'APPEND_CITY',
-        loc
-      }))
+      .then((loc) => dispatch(appendCity(loc))
+      )
       .catch(err => console.log(err))
   }
 }

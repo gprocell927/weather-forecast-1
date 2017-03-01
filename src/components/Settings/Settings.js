@@ -31,6 +31,7 @@ class Settings extends Component{
       citiesMarkup = (
         this.props.pinnedCities
           .map((c,i) => {
+            debugger
             return <li key={i}>{c.city}</li>
           }
         )
